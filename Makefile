@@ -1,5 +1,5 @@
 NAME = inception
-DATA_PATH = $(HOME)/data
+DATA_PATH =/home/zayaz/data
 COMPOSE_FILE = srcs/docker-compose.yml
 COMPOSE = docker compose -f $(COMPOSE_FILE)
 

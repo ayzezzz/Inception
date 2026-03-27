@@ -1,5 +1,3 @@
-# Inception
-
 *This project has been created as part of the 42 curriculum by zayaz.*
 
 ## Description
@@ -19,9 +17,8 @@ The infrastructure consists of:
 
 ### Execution
 1. Clone the repository
-2.Create a `secrets/` directory at the root and add the required `.txt` files for passwords.
-3. Navigate to the root directory
-4. Run `make` to build and start the infrastructure
+2.Create and configure the .env file at the root directory with the required credentials.
+3. Run `make` to build and start the infrastructure
 
 ## Resources
 - [Docker Documentation](https://docs.docker.com/)
@@ -38,7 +35,7 @@ AI was used for debugging Dockerfiles and understanding Docker Compose syntax. A
 VMs virtualize hardware while Docker containers virtualize the OS kernel, making containers lighter and faster.
 
 #### Docker Secrets vs Environment Variables
-This project uses **Docker Secrets** for sensitive data (passwords). Secrets are more secure as they are not stored in the image layers or visible via environment inspection; they are mounted into a temporary memory-based file system inside the container at `/run/secrets/`
+This project utilizes an .env file to manage environment variables for general configuration (e.g., DOMAIN_NAME). While environment variables are convenient, Docker Secrets are used for highly sensitive data like database passwords. Unlike env vars, secrets are not stored in the image or visible via docker inspect; they are mounted as temporary files in memory, providing a higher level of security.
 
 #### Docker Network vs Host Network
 Docker Network provides isolation between containers. Host network is forbidden by the subject.
